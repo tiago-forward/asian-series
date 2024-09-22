@@ -54,9 +54,7 @@ export default function SignInPage() {
             <Image src={githubIcon} alt="" className="size-4" />
             <span className="">Entrar com GitHub</span>
           </Button>
-          <Button
-            className="bg-slate-600 flex justify-start gap-4 hover:bg-slate-700"
-          >
+          <Button className="bg-slate-600 flex justify-start gap-4 hover:bg-slate-700">
             <PersonSimpleRun className="size-4" />
             <span className="">Acessar como visitante</span>
           </Button>

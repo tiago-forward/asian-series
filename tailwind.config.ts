@@ -23,13 +23,15 @@ const config: Config = {
   			'slate-600': 'var(--slate-600)',
   			'slate-700': 'var(--slate-700)',
   			'slate-800': 'var(--slate-800)',
-  			'gradient-horizontal': 'var(--gradient-horizontal)',
-  			'gradient-vertical': 'var(--gradient-vertical)'
   		},
+		backgroundColor: {
+			'gradient-horizontal': 'var(--gradient-horizontal)',
+  			'gradient-vertical': 'var(--gradient-vertical)',
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
   		}
   	}
   },
