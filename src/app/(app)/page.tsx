@@ -1,4 +1,4 @@
-import { Heart } from "@phosphor-icons/react/dist/ssr";
+import { Heart } from '@phosphor-icons/react/dist/ssr'
 
 export default function Home() {
   return (
@@ -6,5 +6,5 @@ export default function Home() {
       <h1>Hello World</h1>
       <Heart weight="duotone" />
     </>
-  );
+  )
 }

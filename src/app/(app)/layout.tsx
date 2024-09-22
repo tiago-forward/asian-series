@@ -5,15 +5,11 @@
 export default function AppLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-//   if (!isAuthenticated()) {
-//     redirect('/auth/sign-in')
-//   }
+  //   if (!isAuthenticated()) {
+  //     redirect('/auth/sign-in')
+  //   }
 
-  return (
-    <div>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>
 }
