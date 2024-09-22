@@ -1,10 +1,12 @@
-import { Heart } from '@phosphor-icons/react/dist/ssr'
+import { getServerSession } from 'next-auth'
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession()
+
   return (
     <>
       <h1>Hello World</h1>
-      <Heart weight="duotone" />
+      <div>Olá {session?.user?.name}</div>
     </>
   )
 }
