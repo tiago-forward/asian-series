@@ -6,7 +6,7 @@ Ferramentas
 - Phosphor-Icons
 - Shadcn/ui
 - Eslint from Rocketseat
-- React Hook Form
+- React Hook Form e o @hook-form/resolvers
 - Zod
-- HookForm/Resolvers
 - NextAuth
+- Prisma e o @prisma/client

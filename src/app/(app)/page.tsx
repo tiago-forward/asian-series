@@ -1,12 +1,19 @@
 import { getServerSession } from 'next-auth'
+import ButtonLogout from './components/buttonLogout'
 
 export default async function Home() {
   const session = await getServerSession()
 
   return (
-    <>
-      <h1>Hello World</h1>
-      <div>Olá {session?.user?.name}</div>
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      {session?.user?.name ? (
+        <>
+          <span>Olá {session?.user?.name}</span>
+          <ButtonLogout />
+        </>
+      ) : (
+        <span>Você desconectou!</span>
+      )}
+    </div>
   )
 }

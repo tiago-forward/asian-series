@@ -11,6 +11,10 @@ import { signIn } from 'next-auth/react'
 // import { Form, useForm } from 'react-hook-form'
 
 export default function SignInPage() {
+  function handleSignIn(provider: string) {
+    signIn(provider, { callbackUrl: '/' })
+  }
+
   // const { handleSubmit } = useForm()
 
   // async function handleLoginAccount(data: any) {
@@ -30,30 +34,31 @@ export default function SignInPage() {
       </div>
 
       {/* onSubmit={handleSubmit(handleLoginAccount)} */}
-      <form className="mt-4">
+      <form onSubmit={(e) => e.preventDefault()} className="mt-4">
         <h2 className="text-slate-100 text-xl">Boas vindas!</h2>
         <p className="text-slate-200 mb-10">
           Faça seu login ou acesse como visitante.
         </p>
         <div className="flex flex-col gap-4">
           <Button
+            onClick={() => handleSignIn('google')}
             className="bg-slate-600 flex justify-start gap-4 hover:bg-slate-700"
           >
             <Image src={googleIcon} alt="" className="size-4" />
-            Entrar com Google
+            <span className="">Entrar com Google</span>
           </Button>
           <Button
-            onClick={() => signIn('github', { callbackUrl: '/' })}
+            onClick={() => handleSignIn('github')}
             className="bg-slate-600 flex justify-start gap-4 hover:bg-slate-700"
           >
             <Image src={githubIcon} alt="" className="size-4" />
-            Entrar com GitHub
+            <span className="">Entrar com GitHub</span>
           </Button>
           <Button
             className="bg-slate-600 flex justify-start gap-4 hover:bg-slate-700"
           >
             <PersonSimpleRun className="size-4" />
-            Acessar como visitante
+            <span className="">Acessar como visitante</span>
           </Button>
         </div>
       </form>
