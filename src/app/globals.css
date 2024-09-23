@@ -39,4 +39,8 @@ body {
     background: rgb(147,197,253);
     background-image: linear-gradient(to bottom, #1e293b, #1b2538, #182234, #161e31, #131b2e, #131b2e, #131b2e, #131b2e, #161e31, #182234, #1b2538, #1e293b);
   }
+
+  .before-active:before {
+    background: linear-gradient(95deg, rgba(147,197,253,1) 0%, rgba(253,164,175,1) 55%);
+  }
 }

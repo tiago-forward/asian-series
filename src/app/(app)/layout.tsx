@@ -6,6 +6,7 @@ import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import ButtonLogin from './components/buttonLogin'
+import { NavLink } from './components/navLink'
 
 export default async function AppLayout({
   children,
@@ -15,7 +16,6 @@ export default async function AppLayout({
   // if (!isAuthenticated()) {
   //   redirect('/auth/sign-in')
   // }
-
   const session = await getServerSession()
 
   if (!session) {
@@ -30,31 +30,22 @@ export default async function AppLayout({
           <nav className="pl-7">
             <ul className="flex flex-col items-start">
               <li>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 py-2 text-slate-300 hover:text-slate-100"
-                >
+                <NavLink href='/home'>
                   <ChartLineUp />
                   <span>Início</span>
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 py-2 text-slate-300 hover:text-slate-100"
-                >
+                <NavLink href='/explore'>
                   <Binoculars />
                   <span>Explorar</span>
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 py-2 text-slate-300 hover:text-slate-100"
-                >
+                <NavLink href='/profile'>
                   <User />
                   <span>Perfil</span>
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>

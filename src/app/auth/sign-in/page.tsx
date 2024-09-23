@@ -12,7 +12,7 @@ import { signIn } from 'next-auth/react'
 
 export default function SignInPage() {
   function handleSignIn(provider: string) {
-    signIn(provider, { callbackUrl: '/' })
+    signIn(provider, { callbackUrl: '/home' })
   }
 
   // const { handleSubmit } = useForm()
