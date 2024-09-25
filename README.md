@@ -10,3 +10,4 @@ Ferramentas
 - Zod
 - NextAuth
 - Prisma e o @prisma/client
+- Axios

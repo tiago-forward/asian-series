@@ -1,5 +1,3 @@
-// import { redirect } from "next/navigation";
-
 import { Binoculars, ChartLineUp, User } from '@phosphor-icons/react/dist/ssr'
 import ButtonLogout from './components/buttonLogout'
 import { getServerSession } from 'next-auth'
@@ -13,13 +11,20 @@ export default async function AppLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // if (!isAuthenticated()) {
-  //   redirect('/auth/sign-in')
-  // }
+  // Obter a sessão de utilizador
   const session = await getServerSession()
 
-  if (!session) {
-    redirect('/auth/sign-in')
+  // Verificar se o utilizador está autenticado ou é um visitante
+  if (!session && typeof window !== "undefined") {
+    const queryParams = new URLSearchParams(window.location.search)
+    console.log(queryParams)
+    const isVisitor = queryParams.get('name') === 'Visitante'
+
+    if (!isVisitor) {
+      // Se não for visitante e não houver sessão, redireciona para sign-in
+      redirect('/auth/sign-in')
+    }
+
   }
 
   return (
@@ -54,7 +59,7 @@ export default async function AppLayout({
           {session ? (
             <>
               <Image
-                src={session.user.image}
+                src={session.user?.image}
                 alt="Avatar"
                 width={32}
                 height={32}

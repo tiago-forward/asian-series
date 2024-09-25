@@ -1,12 +1,12 @@
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
+import { getServerSession } from 'next-auth';
+import HomeClient from '@/app/(app)/home/components/homeClient'
 
-export default async function Home() {
+export default async function HomePage() {
+  // Obter a sessão de utilizador no lado do servidor
   const session = await getServerSession()
 
-  if (!session) {
-    redirect('/auth/sign-in')
-  }
+  // Passar o nome do utilizador autenticado (se existir) como prop para o componente de cliente
+  const userName = session?.user?.name || null
 
-  return <main className="col-span-5">Main</main>
+  return <HomeClient userName={userName} />
 }

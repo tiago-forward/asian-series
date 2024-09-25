@@ -11,7 +11,7 @@ export default function ButtonLogout({
 }) {
   return (
     <Button
-      onClick={() => signOut()}
+    onClick={() => signOut({ callbackUrl: '/auth/sign-in' })}
       title="Logout"
       className="group flex items-center gap-2 bg-inherit text-slate-100 hover:text-slate-400 outline-none p-0 hover:bg-inherit"
     >
