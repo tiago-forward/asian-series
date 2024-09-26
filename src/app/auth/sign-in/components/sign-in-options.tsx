@@ -8,12 +8,13 @@ import { signIn } from 'next-auth/react'
 import { api } from '@/lib/axios'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { BuiltInProviderType } from 'next-auth/providers/index'
 
 export function SignInOptions() {
   const router = useRouter()
 
   // Função para lidar com login via provedores (Google ou GitHub)
-  function handleSignIn(provider: string) {
+  function handleSignIn(provider: BuiltInProviderType) {
     signIn(provider, { callbackUrl: '/home' })
   }
 
