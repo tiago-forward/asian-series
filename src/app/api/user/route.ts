@@ -4,13 +4,13 @@ import { prisma } from '@/lib/prisma'
 export async function POST(req: Request) {
   try {
     // Parse do corpo da requisição para obter os dados
-    const { name, avatar_url } = await req.json()
+    const { name, image } = await req.json()
 
     // Criação do utilizador na base de dados
     const newUser = await prisma.user.create({
       data: {
         name,
-        avatar_url,
+        image,
       },
     })
 
